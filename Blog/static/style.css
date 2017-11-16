@@ -1,0 +1,135 @@
+header{
+  display:flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  font-size: 32px;
+}
+
+h2 {
+  font-weight: bold;
+
+  text-decoration: underline;
+}
+
+img:first-of-type{
+  border: 5px solid black;
+}
+
+table, th, td {
+
+  border: 1px solid black;
+  font-family: sans-serif;
+}
+
+td{
+  text-align: center;
+}
+
+td:hover{
+  background-color: #7EFD31
+}
+
+a:visited{
+  color: purple;
+}
+
+main{
+  display: flex;
+
+  justify-content: space-between;
+}
+
+footer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.blog{
+border-style: solid;
+
+}
+
+.side{
+border-style: dotted;
+font-family: sans-serif;
+}
+
+.head-photo{
+  width: 250px;
+  height: 100%;
+}
+
+.name{
+
+}
+
+.rusty{
+  width: 250px;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.about-aside{
+  flex-flow: column;
+}
+
+.about{
+  display: block;
+}
+
+.doobly{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.git-instruct{
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.create{
+  order: 2;
+  background-image: url('https://images.duckduckgo.com/iu/?u=http%3A%2F%2Fth01.deviantart.net%2Ffs70%2FPRE%2Fi%2F2013%2F081%2F0%2F4%2Fspring_sunset___free_stock_image_by_kevron2001-d5yv3zn.jpg&f=1');
+  background-attachment: fixed;
+  margin: 5px;
+}
+
+.local{
+  order: 3;
+  background-image: url('https://images.duckduckgo.com/iu/?u=https%3A%2F%2Fthumb7.shutterstock.com%2Fdisplay_pic_with_logo%2F64778%2F634117829%2Fstock-photo-two-fidget-spinners-634117829.jpg&f=1');
+  background-attachment: local;
+  margin: 5px;
+}
+
+.different{
+  order: 1;
+  background-image: url('https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.i9tpnWbKDfKhBWyhW91X0gEsDI%26pid%3D15.1&f=1');
+  background-attachment: scroll;
+  margin: 5px;
+}
+
+#introgit {
+  display: block;
+  margin: auto;
+  width: 250px;
+  height: auto;
+}
+
+#harambe{
+  display: block;
+  margin: auto;
+  width: 511px;
+  height: 288px;
+}
+
+#harambe:hover{
+  background-image: url(https://akphoto1.ask.fm/36b/20e68/163b/402c/9139/7a9f00ebf76f/original/256954.jpg)
+}
