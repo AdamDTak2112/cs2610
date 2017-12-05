@@ -32,7 +32,11 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+<<<<<<<<< saved version
     'ConvertUnit.apps.ConvertunitConfig',	
+=========
+    'ConvertUnit.apps'
+>>>>>>>>> local version
     'polls.apps.PollsConfig',
     'Blog.apps.BlogConfig',
     'django.contrib.admin',
