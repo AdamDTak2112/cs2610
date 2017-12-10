@@ -26,7 +26,4 @@ def convertFromRequest(request):
            resp = { 'units': to, 'value': val }
            
     return HttpResponse(json.dumps(resp))
-    
-def index(request):
-    return render(request, '')
             
