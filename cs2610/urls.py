@@ -18,7 +18,8 @@ from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
-    url(r'^fib/', include('fib.urls')),
     url(r'', include('polls.urls')),
-    url(r'^admin/', admin.site.urls),
+    url(r'^fib/', include('fib.urls')),
+    url(r'^api/', include('ConvertUnit.urls')),
+    url(r'^admin/', admin.site.urls)
 ]
