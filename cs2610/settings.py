@@ -32,6 +32,7 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 # Application definition
 
 INSTALLED_APPS = [
+    'gold.apps.GoldConfig',
     'ConvertUnit.apps.ConvertunitConfig',
     'fib.apps.FibConfig',
     'polls.apps.PollsConfig',
