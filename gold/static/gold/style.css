@@ -1,0 +1,13 @@
+.container{
+    display:flex;
+    justify-content:center;
+    background-color: gold;
+}
+
+h2{
+    font-family: cursive;
+}
+
+#result{
+    font-weight: bold;
+}
