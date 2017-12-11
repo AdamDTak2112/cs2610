@@ -1,0 +1,88 @@
+{% load static %}
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Worth Your Weight in Gold</title>
+        <link href="{% static 'gold/style.css' %}" rel="stylesheet">
+    </head>
+    
+    <body onload="loadGoldPrice()">
+        <div class="container">
+            <div class="where_magic_happens">
+                <h2>Calculate your weight in gold via our dope API</h2>
+                <input type="number" id="weight" name="weight">
+                <button type="button" onclick="calculate()">Calculate</button>
+                <p id="result"></p>
+            </div>
+        </div>
+        
+        <script type="text/javascript">
+        
+var goldPrice;
+        
+function loadGoldPrice(){
+    console.log('loading gold price...');
+    var apiKey = 'vsJphviTvHGyNAJJ2jTo';
+    var start = getDate(5);
+    var end = getDate(0);
+    var goldRUrl = "https://www.quandl.com/api/v3/datasets/LBMA/GOLD.json?api_key=" + apiKey + "&column_index=2&start_date=" + start + "&end_date=" + end;
+    var goldReq = new XMLHttpRequest();
+    goldReq.open('GET', goldRUrl);
+    goldReq.responseType = 'json';
+    goldReq.send();
+    goldReq.onload = function(){
+        var json = goldReq.response;
+        goldPrice = json.dataset.data[0][1];
+        console.log(goldPrice);
+    }
+}
+
+function getDate(offset){
+    var today = new Date();
+    var dd = today.getDate() - offset;
+    var mm = today.getMonth()+1;
+    var yyyy = today.getFullYear();
+    
+    if (dd < 0){
+        dd = dd + 30;
+        mm = mm + 1;
+        if (mm > 12){
+            mm -= 12;
+            yyyy = yyyy + 1;
+        }
+    }
+    
+    if (dd<10){
+        dd = '0'+dd;
+    }
+    
+    if(mm<10){
+        mm = '0'+mm;
+    }
+    
+    today = yyyy + '-' + mm + '-' + dd;
+    
+    return today;
+}
+        
+var calculate = function() {
+    var weightLbs = document.querySelector("#weight").value;
+    var unitconvURL = "https://cs2610-adam-tak2112.c9users.io/api/?from=lbs&to=t_oz&value=" + weightLbs;
+    var convReq = new XMLHttpRequest();
+    convReq.open('GET', unitconvURL);
+    convReq.responseType = 'json';
+    convReq.send();
+    convReq.onload = function() {
+        var json = convReq.response;
+        console.log(json.value);
+        var convertedWeigh = json.value;
+        console.log(goldPrice);
+        var weightPrice = convertedWeigh * goldPrice;
+        document.querySelector('#result').textContent = 'Your price is $' + (Math.round(weightPrice*100)/100);
+    }
+}        
+            
+        </script>
+    </body>
+</html>
