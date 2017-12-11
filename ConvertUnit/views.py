@@ -8,7 +8,7 @@ import json
 # Create your views here.
 
 def convert(value, to, fro):
-    newValue = (value / Convert.factors[fro]) * Convert.factors[to]
+    newValue = (value * Convert.factors[fro]) / Convert.factors[to]
     return newValue
 
 def convertFromRequest(request):
